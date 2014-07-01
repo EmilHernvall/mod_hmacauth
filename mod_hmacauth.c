@@ -1,21 +1,3 @@
-/*
- * Sample config:
- * LoadModule hmacauth_module modules/mod_hmacauth.so
- * HMACAuthSecret "foobar9192"
- * <Location /secret.txt>
- *     SetHandler hmacauth
- * </Location>
- *
- * Sample secret generation in PHP:
- * $time = time();
- * echo "timestamp=".$time."&secret=".hash_hmac("md5", $time."|192.168.0.20", "foobar9192")."\n";
- *
- * Can be installed using:
- * sudo apxs -c -i mod_hmacauth.c
- *
- * (apxs may require some dev package)
- */
-
 #include "httpd.h"
 #include "http_config.h"
 #include "http_log.h"
